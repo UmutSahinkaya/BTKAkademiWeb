@@ -1,5 +1,6 @@
 ﻿using Entities.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Services.Contracts;
 
 namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
@@ -22,6 +23,10 @@ namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
 
         public IActionResult Create()
         {
+            ViewBag.Categories = new SelectList(_manager.CategoryService.GetAllCategories(false),
+            "CategoryId",
+            "CategoryName", "1");
+
             return View();
         }
 
@@ -54,6 +59,7 @@ namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
             }
             return View();
         }
+
 
         [HttpGet]
         public IActionResult Delete([FromRoute(Name = "id")] int id)
