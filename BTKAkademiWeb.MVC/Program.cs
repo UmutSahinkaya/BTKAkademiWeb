@@ -6,12 +6,12 @@ using Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<RepositoryContext>(opt =>
+
+builder.Services.AddDbContext<RepositoryContext>(options =>
 {
-    opt.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"),
-        b => b.MigrationsAssembly("BTKAkademiWeb.MVC"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"),
+    b => b.MigrationsAssembly("StoreApp"));
 });
 
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
@@ -22,13 +22,12 @@ builder.Services.AddScoped<IServiceManager, ServiceManager>();
 builder.Services.AddScoped<IProductService, ProductManager>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
+builder.Services.AddAutoMapper(typeof(Program));
 
 var app = builder.Build();
 
-
-app.UseHttpsRedirection();
 app.UseStaticFiles();
-
+app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseEndpoints(endpoints =>
@@ -41,6 +40,5 @@ app.UseEndpoints(endpoints =>
 
     endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
 });
-
 
 app.Run();
