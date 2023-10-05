@@ -12,7 +12,7 @@ builder.Services.AddDbContext<RepositoryContext>(opt =>
         b => b.MigrationsAssembly("BTKAkademiWeb.MVC"));
 });
 
-builder.Services.AddScoped<IRepositoryManager, RepositoryManger>();
+builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 

@@ -1,13 +1,8 @@
 ﻿using Repositories.Contracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Repositories
 {
-    public class RepositoryManager
+    public class RepositoryManager:IRepositoryManager
     {
         private readonly RepositoryContext _context;
         private readonly IProductRepository _productRepository;
