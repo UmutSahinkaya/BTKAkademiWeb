@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTKAkademiWeb.MVC", "BTKAkademiWeb.MVC\BTKAkademiWeb.MVC.csproj", "{94369ABD-4320-4FC7-9135-F49F11B29B87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTKAkademiWeb.MVC", "BTKAkademiWeb.MVC\BTKAkademiWeb.MVC.csproj", "{94369ABD-4320-4FC7-9135-F49F11B29B87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{F134DDC3-AEBA-41EC-A8AB-CFA1089B6BBF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{32135366-679A-428A-999B-F502D0407B7E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{F7B47EE3-0257-4122-9A76-21B664D09B39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositories", "Repositories\Repositories.csproj", "{BE2B5413-1DD7-4075-A578-B094559BF24C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{18251670-1E10-4E2E-988C-83394D402239}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{E68FDACC-B9FC-4EE1-B655-EBB95FA438FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +21,18 @@ Global
 		{94369ABD-4320-4FC7-9135-F49F11B29B87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94369ABD-4320-4FC7-9135-F49F11B29B87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94369ABD-4320-4FC7-9135-F49F11B29B87}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F134DDC3-AEBA-41EC-A8AB-CFA1089B6BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F134DDC3-AEBA-41EC-A8AB-CFA1089B6BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F134DDC3-AEBA-41EC-A8AB-CFA1089B6BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F134DDC3-AEBA-41EC-A8AB-CFA1089B6BBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7B47EE3-0257-4122-9A76-21B664D09B39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7B47EE3-0257-4122-9A76-21B664D09B39}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7B47EE3-0257-4122-9A76-21B664D09B39}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7B47EE3-0257-4122-9A76-21B664D09B39}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18251670-1E10-4E2E-988C-83394D402239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18251670-1E10-4E2E-988C-83394D402239}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18251670-1E10-4E2E-988C-83394D402239}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18251670-1E10-4E2E-988C-83394D402239}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32135366-679A-428A-999B-F502D0407B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32135366-679A-428A-999B-F502D0407B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32135366-679A-428A-999B-F502D0407B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32135366-679A-428A-999B-F502D0407B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2B5413-1DD7-4075-A578-B094559BF24C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2B5413-1DD7-4075-A578-B094559BF24C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2B5413-1DD7-4075-A578-B094559BF24C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2B5413-1DD7-4075-A578-B094559BF24C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68FDACC-B9FC-4EE1-B655-EBB95FA438FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68FDACC-B9FC-4EE1-B655-EBB95FA438FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68FDACC-B9FC-4EE1-B655-EBB95FA438FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68FDACC-B9FC-4EE1-B655-EBB95FA438FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
