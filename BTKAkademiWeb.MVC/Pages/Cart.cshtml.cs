@@ -10,6 +10,7 @@ namespace BTKAkademiWeb.MVC.Pages
         private readonly IServiceManager _manager;
 
         public Cart Cart { get; set; } // IoC
+        public string ReturnUrl { get; set; } = "/";
 
         public CartModel(IServiceManager manager, Cart cart)
         {
@@ -17,7 +18,6 @@ namespace BTKAkademiWeb.MVC.Pages
             Cart = cart;
         }
 
-        public string ReturnUrl { get; set; } = "/";
 
         public void OnGet(string returnUrl)
         {
