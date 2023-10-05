@@ -7,7 +7,7 @@
 namespace BTKAkademiWeb.MVC.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace BTKAkademiWeb.MVC.Migrations
                 {
                     CategoryId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    CategoryName = table.Column<string>(type: "TEXT", nullable: true)
+                    CategoryName = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,12 +31,18 @@ namespace BTKAkademiWeb.MVC.Migrations
                 {
                     ProductId = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    ProductName = table.Column<string>(type: "TEXT", nullable: true),
-                    Price = table.Column<decimal>(type: "TEXT", nullable: false)
+                    ProductName = table.Column<string>(type: "TEXT", nullable: false),
+                    Price = table.Column<decimal>(type: "TEXT", nullable: false),
+                    CategoryId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.ProductId);
+                    table.ForeignKey(
+                        name: "FK_Products_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId");
                 });
 
             migrationBuilder.InsertData(
@@ -44,31 +50,38 @@ namespace BTKAkademiWeb.MVC.Migrations
                 columns: new[] { "CategoryId", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Books" },
-                    { 2, "Electronics" }
+                    { 1, "Book" },
+                    { 2, "Electronic" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "ProductId", "Price", "ProductName" },
+                columns: new[] { "ProductId", "CategoryId", "Price", "ProductName" },
                 values: new object[,]
                 {
-                    { 1, 17000m, "Computer" },
-                    { 2, 1000m, "Keyboard" },
-                    { 3, 600m, "Mouse" },
-                    { 4, 8000m, "Monitor" },
-                    { 5, 1500m, "Deck" }
+                    { 1, 2, 17000m, "Computer" },
+                    { 2, 2, 1000m, "Keyboard" },
+                    { 3, 2, 500m, "Mouse" },
+                    { 4, 2, 7000m, "Monitor" },
+                    { 5, 2, 1500m, "Deck" },
+                    { 6, 1, 25m, "History" },
+                    { 7, 1, 45m, "Hamlet" }
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_CategoryId",
+                table: "Products",
+                column: "CategoryId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "Products");
 
             migrationBuilder.DropTable(
-                name: "Products");
+                name: "Categories");
         }
     }
 }
