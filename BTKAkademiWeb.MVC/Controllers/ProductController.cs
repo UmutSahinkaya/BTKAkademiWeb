@@ -3,11 +3,11 @@ using Repositories.Contracts;
 
 namespace BTKAkademiWeb.MVC.Controllers
 {
-    public class ProductsController : Controller
+    public class ProductController : Controller
     {
         private readonly IRepositoryManager _manager;
 
-        public ProductsController(IRepositoryManager manager)
+        public ProductController(IRepositoryManager manager)
         {
             _manager = manager;
         }

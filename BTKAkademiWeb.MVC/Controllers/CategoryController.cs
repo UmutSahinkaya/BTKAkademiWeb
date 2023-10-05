@@ -3,11 +3,11 @@ using Repositories.Contracts;
 
 namespace BTKAkademiWeb.MVC.Controllers
 {
-    public class CategoriesController : Controller
+    public class CategoryController : Controller
     {
         private IRepositoryManager _manager;
 
-        public CategoriesController(IRepositoryManager manager)
+        public CategoryController(IRepositoryManager manager)
         {
             _manager = manager;
         }
