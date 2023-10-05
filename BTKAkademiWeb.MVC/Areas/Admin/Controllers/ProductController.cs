@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities.Models;
+using Microsoft.AspNetCore.Mvc;
 using Services.Contracts;
 
 namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
@@ -20,6 +21,13 @@ namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
         }
 
         public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([FromForm] Product product)
         {
             return View();
         }

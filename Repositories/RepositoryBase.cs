@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
-using System.Linq.Expressions;
 
 namespace Repositories
 {
@@ -12,6 +12,11 @@ namespace Repositories
         protected RepositoryBase(RepositoryContext context)
         {
             _context = context;
+        }
+
+        public void Create(T entity)
+        {
+            _context.Set<T>().Add(entity);
         }
 
         public IQueryable<T> FindAll(bool trackChanges)
@@ -29,4 +34,3 @@ namespace Repositories
         }
     }
 }
-
