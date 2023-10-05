@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Repositories;
 
@@ -10,9 +11,11 @@ using Repositories;
 namespace BTKAkademiWeb.MVC.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    partial class RepositoryContextModelSnapshot : ModelSnapshot
+    [Migration("20231005135708_ProductGuncellemesi")]
+    partial class ProductGuncellemesi
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.11");
@@ -77,7 +80,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 1,
                             CategoryId = 2,
-                            ImageUrl = "/images/1.jpg",
                             Price = 17000m,
                             ProductName = "Computer",
                             Summary = ""
@@ -86,7 +88,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 2,
                             CategoryId = 2,
-                            ImageUrl = "/images/2.jpg",
                             Price = 1000m,
                             ProductName = "Keyboard",
                             Summary = ""
@@ -95,7 +96,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 3,
                             CategoryId = 2,
-                            ImageUrl = "/images/3.jpg",
                             Price = 500m,
                             ProductName = "Mouse",
                             Summary = ""
@@ -104,7 +104,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 4,
                             CategoryId = 2,
-                            ImageUrl = "/images/4.jpg",
                             Price = 7000m,
                             ProductName = "Monitor",
                             Summary = ""
@@ -113,7 +112,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 5,
                             CategoryId = 2,
-                            ImageUrl = "/images/5.jpg",
                             Price = 1500m,
                             ProductName = "Deck",
                             Summary = ""
@@ -122,7 +120,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 6,
                             CategoryId = 1,
-                            ImageUrl = "/images/6.jpg",
                             Price = 25m,
                             ProductName = "History",
                             Summary = ""
@@ -131,7 +128,6 @@ namespace BTKAkademiWeb.MVC.Migrations
                         {
                             ProductId = 7,
                             CategoryId = 1,
-                            ImageUrl = "/images/7.jpg",
                             Price = 45m,
                             ProductName = "Hamlet",
                             Summary = ""
