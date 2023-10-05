@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Entities.Models
+namespace Entities.Models;
+public class Product
 {
-    public class Product
-    {
-        public int ProductId { get; set; }
-        public String? ProductName { get; set; } = String.Empty;
-        public decimal Price { get; set; }
-    }
-}
+    public int ProductId { get; set; }
+    [Required(ErrorMessage = "ProductName is required.")]
+    public String? ProductName { get; set; } = String.Empty;
 
+    [Required(ErrorMessage = "Price is required.")]
+    public decimal Price { get; set; }
+}
