@@ -11,7 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<RepositoryContext>(options =>
 {
     options.UseSqlite(builder.Configuration.GetConnectionString("sqlconnection"),
-    b => b.MigrationsAssembly("StoreApp"));
+    b => b.MigrationsAssembly("BTKAkademiWeb.MVC"));
 });
 
 builder.Services.AddScoped<IRepositoryManager, RepositoryManager>();
