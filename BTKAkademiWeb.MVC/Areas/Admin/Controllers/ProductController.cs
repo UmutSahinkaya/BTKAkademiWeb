@@ -54,6 +54,7 @@ namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
             }
             return View();
         }
+
         [HttpGet]
         public IActionResult Delete([FromRoute(Name = "id")] int id)
         {
