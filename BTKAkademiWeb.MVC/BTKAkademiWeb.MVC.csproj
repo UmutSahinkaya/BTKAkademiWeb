@@ -9,6 +9,9 @@
   <ItemGroup>
     <None Include="Pages\Contact.cshtml" />
     <None Include="Pages\_ViewStart.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_Navbar.cshtml" />
+    <None Include="Views\Shared\_ProductCard.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
