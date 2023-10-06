@@ -52,6 +52,7 @@ namespace BTKAkademiWeb.MVC.Infrastructe.Extensions
             services.AddRouting(options =>
             {
                 options.LowercaseUrls = true;
+                options.AppendTrailingSlash = false;
             });
         }
 
