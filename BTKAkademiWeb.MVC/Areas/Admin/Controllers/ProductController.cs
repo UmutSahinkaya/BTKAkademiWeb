@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Services.Contracts;
 
-namespace StoreApp.Areas.Admin.Controllers
+namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class ProductController : Controller

@@ -2,7 +2,7 @@ using AutoMapper;
 using Entities.Dtos;
 using Entities.Models;
 
-namespace StoreApp.Infrastructe.Mapper
+namespace BTKAkademiWeb.MVC.Infrastructe.Mapper
 {
     public class MappingProfile : Profile
     {
