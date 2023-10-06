@@ -10,6 +10,9 @@ namespace BTKAkademiWeb.MVC.Infrastructe.TagHelpers
     {
         private readonly IServiceManager _manager;
 
+        [HtmlAttributeName("number")]
+        public int Number { get; set; }
+
         public LastestProductTagHelper(IServiceManager manager)
         {
             _manager = manager;
@@ -30,7 +33,7 @@ namespace BTKAkademiWeb.MVC.Infrastructe.TagHelpers
             h6.InnerHtml.AppendHtml(" Lastest Products");
 
             TagBuilder ul = new TagBuilder("ul");
-            var products = _manager.ProductService.GetLastestProducts(5, false);
+            var products = _manager.ProductService.GetLastestProducts(Number, false);
             foreach (Product product in products)
             {
                 TagBuilder li = new TagBuilder("li");
