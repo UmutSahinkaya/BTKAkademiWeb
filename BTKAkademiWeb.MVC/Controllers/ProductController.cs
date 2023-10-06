@@ -16,7 +16,7 @@ namespace BTKAkademiWeb.MVC.Controllers
             _manager = manager;
         }
 
-        public IActionResult Index([FromQuery] ProductRequestParameters p)
+        public IActionResult Index(ProductRequestParameters p)
         {
             var model = _manager.ProductService.GetAllProductsWithDetails(p);
             return View(model);
