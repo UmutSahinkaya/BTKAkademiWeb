@@ -18,5 +18,12 @@ namespace BTKAkademiWeb.MVC.Areas.Admin.Controllers
             var orders = _manager.OrderService.Orders;
             return View(orders);
         }
+
+        [HttpPost]
+        public IActionResult Complete([FromForm] int id)
+        {
+            _manager.OrderService.Complete(id);
+            return RedirectToAction("Index");
+        }
     }
 }
