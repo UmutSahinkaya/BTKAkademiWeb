@@ -1,5 +1,6 @@
 using Entities.Models;
 using Entities.RequestParameters;
+using Microsoft.EntityFrameworkCore;
 using Repositories.Contracts;
 
 namespace Repositories
@@ -19,13 +20,20 @@ namespace Repositories
 
         public IQueryable<Product> GetAllProductsWithDetails(ProductRequestParameters p)
         {
-            throw new NotImplementedException();
+            return p is null
+                ? _context
+                    .Products
+                    .Include(p => p.Category)
+                : _context
+                    .Products
+                    .Include(p => p.Category)
+                    .Where(p => p.CategoryId.Equals(p.CategoryId));
         }
 
         // Interface
         public Product? GetOneProduct(int id, bool trackChanges)
         {
-              return FindByCondition(p => p.ProductId.Equals(id),trackChanges);  
+            return FindByCondition(p => p.ProductId.Equals(id), trackChanges);
         }
 
         public IQueryable<Product> GetShowcaseProducts(bool trackChanges)
@@ -35,6 +43,6 @@ namespace Repositories
         }
 
         public void UpdateOneProduct(Product entity) => Update(entity);
-       
+
     }
 }
