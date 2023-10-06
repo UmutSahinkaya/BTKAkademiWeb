@@ -47,6 +47,13 @@ namespace BTKAkademiWeb.MVC.Infrastructe.Extensions
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<IOrderService, OrderManager>();
         }
+        public static void ConfigureRouting(this IServiceCollection services)
+        {
+            services.AddRouting(options =>
+            {
+                options.LowercaseUrls = true;
+            });
+        }
 
     }
 }
