@@ -4,6 +4,7 @@ using Repositories;
 using Repositories.Contracts;
 using Services;
 using Services.Contracts;
+using BTKAkademiWeb.MVC.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,8 @@ builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<Cart>();
 
 builder.Services.AddSingleton<Cart>();
+
+builder.Services.AddScoped<Cart>(c => SessionCart.GetCart(c));
 
 builder.Services.AddAutoMapper(typeof(Program));
 
